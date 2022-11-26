@@ -15,7 +15,7 @@
 	 
 	   PARAMETER (ZERO = 0.0D0, ONE = 1.0D0, TWO = 2.0D0)
 	 
-	   E1=PROPS(1)
+	   E1=PROPS(1) ! MODULUS IN THE FIBER DIRECTION
 	   E2=PROPS(2)
 	   E3=PROPS(3)
 	   NU12 = PROPS(4)
@@ -83,9 +83,5 @@
 	   STATEV(4) = (ONE/(TWO*YT)**2) * (STRESS(2) + STRESS(3))**2 + (ONE/(ST)**2) * (STRESS(4)**2 - STRESS(2)*STRESS(3)) + (ONE/(SL)**2) * (STRESS(5)**2 + STRESS(6)**2) + (ONE/YC)*((YC/(TWO*ST))**2 - ONE) * (STRESS(2) + STRESS(3)) 
 	   END IF
 	   
-	 
-	 
-	 
-	 
 	  RETURN
       END
