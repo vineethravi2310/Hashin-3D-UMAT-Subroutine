@@ -36,13 +36,10 @@ There are five solution-dependent state variables. They are as follows
 
 A simple tensile test is performed to check the working of the UMAT. The specimen dimensions are 100mm x 10mm. The ply layup is $[0/+45/-45/90]_s$, and each ply is 0.125mm thick. The left end of the specimen is fixed in X, Z, ROTX, ROTY, and ROTZ, and the middle of the left end is fixed in Y. A displacement of 0.15mm is applied on the right end. The material properties are
 * $E_{11}$ = 135e3 MPa
-* $E_{22}$ = 10e3 MPa
-* $E_{33}$ = 10e3 MPa
-* $\nu_{12}$ = 0.25
-* $\nu_{13}$ = 0.25
+* $E_{22}$ = $E_{33}$ = 10e3 MPa
+* $\nu_{12}$ = $\nu_{13}$ = 0.25
 * $\nu_{23}$ = 0.45
-* $G_{12}$ = 4.3e3 MPa
-* $G_{13}$ = 4.3e3 MPa
+* $G_{12}$ = $G_{13}$ = 4.3e3 MPa
 * $G_{23}$ = 3e3 MPa
 * $X_T$ = 2410 MPa
 * $X_C$ = 1300 MPa
