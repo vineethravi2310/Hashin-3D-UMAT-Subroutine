@@ -1,4 +1,6 @@
-# Abaqus-Hashin-3D-Subroutines
+# Hashin-3D-Subroutines
+
+The following is a UMAT subroutine for Hashin failure criteria in Abaqus. In Abaqus, the Hashin failure criterion is available only to shell and continuum shell elements. Therefore this UMAT subroutine has been written, which can be used for continuum solid elements. Theory regarding 3D Hashin can be found [here](https://asmedigitalcollection.asme.org/appliedmechanics/article-abstract/47/2/329/390775/Failure-Criteria-for-Unidirectional-Fiber?redirectedFrom=fulltext).
 
 # Input to the Model
 
