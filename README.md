@@ -1,6 +1,23 @@
 # Hashin-3D-Subroutines
 
-The following is a UMAT subroutine for Hashin failure criteria in Abaqus. In Abaqus, the Hashin failure criterion is available only to shell and continuum shell elements. Therefore this UMAT subroutine has been written, which can be used for continuum solid elements. Theory regarding 3D Hashin can be found [here](https://asmedigitalcollection.asme.org/appliedmechanics/article-abstract/47/2/329/390775/Failure-Criteria-for-Unidirectional-Fiber?redirectedFrom=fulltext).
+The following is a UMAT subroutine for Hashin failure criteria in Abaqus. In Abaqus, the Hashin failure criterion is available only to shell and continuum shell elements. Therefore this UMAT subroutine has been written, which can be used for continuum solid elements. The equations for the different failure modes are given below.
+
+### Fiber Failure in Tension
+When $\sigma_{11} > 0$
+$$F_f = \Big(\frac{\sigma_{11}}{X_T}\Big)^2 + \frac{1}{S_{12}^2}( \tau_{12}^2 + \tau_{13}^2 )$$
+
+### Fiber Failure in Compression
+When $\sigma_{11} < 0$
+$$F_f = \Big(\frac{-\sigma_{11}}{X_C}\Big)^2$$
+
+### Matrix Failure in Tension
+When $\sigma_{22} + \sigma_{33} > 0$
+$$F_m = \frac{1}{Y_T^2}( \sigma_{22}^2 + \sigma_{33}^2) + \frac{1}{S_{23}^2}( \tau_{23}^2 - \sigma_{22}\sigma_{33}) + \frac{1}{S_{12}^2}( \tau_{12}^2 + \tau_{13}^2)$$
+
+### Matrix Failure in Compression
+When $\sigma_{22} + \sigma_{33} < 0$
+$$F_m = \frac{1}{Y_C} \Bigl[  \Bigl(\frac{Y_C}{2S_{23}}\Bigr)^2  - 1 \Bigr] (\sigma_{22} + \sigma_{33}) + \frac{1}{4S_{23}^2}(\sigma_{22} + \sigma_{33})^2 + \frac{1}{S_{23}^2}( \tau_{23}^2 - \sigma_{22}\sigma_{33}) + \frac{1}{S_{12}^2}( \tau_{12}^2 + \tau_{13}^2)$$
+
 
 # Input to the Model
 
@@ -31,9 +48,12 @@ There are five solution-dependent state variables. They are as follows
  
 # Verification
 
-| ![](Images/Load&BC.png) | 
-|:--:| 
-| *FE Model and Boundary Conditions* |
+<p align="center">
+<img src="Images/Load&BC.png" width = 1000 alt>
+</p>
+<p align="center">
+<em>FE Model and Boundary Conditions</em>
+</p>
 
 
 A simple tensile test is performed to check the working of the UMAT. The specimen dimensions are 100mm x 10mm. The ply layup is $[0/+45/-45/90]_s$, and each ply is 0.125mm thick. The left end of the specimen is fixed in X, Z, ROTX, ROTY, and ROTZ, and the middle of the left end is fixed in Y. A displacement of 0.15mm is applied on the right end. The material properties are
